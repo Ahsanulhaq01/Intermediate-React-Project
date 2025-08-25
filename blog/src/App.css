@@ -1,0 +1,23 @@
+.nav-container{
+    max-width: 100vw;
+    border: 2px solid red;
+    background-color: #161349;
+    height: 60px;
+    padding: 0px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+.logo .menu-img{
+    padding: 10px 15px;
+}
+.nav-right-section .nav-ul{
+    display: flex;
+    gap: 50px;
+    list-style: none;
+    align-items: center;
+    border: 2px solid red;
+    padding: 5px 10px ;
+}
+

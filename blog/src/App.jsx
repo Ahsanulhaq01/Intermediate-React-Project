@@ -1,11 +1,10 @@
-
+import './App.css'
 function App() {
  
 
   return (
     <>
     <div className="nav-container">
-      <nav>
         <div className="logo">
           <img src="./menu-logo.png" alt="menu-logo" className="menu-img" />
         </div>
@@ -16,7 +15,6 @@ function App() {
           <li key={3}>Contact</li>
         </ul>
         </div>
-      </nav>
     </div>
     </>
   )
