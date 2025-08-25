@@ -20,6 +20,7 @@ function AllPost(){
  },[])
   return (
     <>
+    <title>All post</title>
     <Navbar/>
     <div className="homepage-container">
       {blogdata.map((blogpost)=>{

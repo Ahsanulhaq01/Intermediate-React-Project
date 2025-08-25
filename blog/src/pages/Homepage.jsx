@@ -7,6 +7,7 @@ function Homepage(){
     }
     return(
         <>
+        <title>Homepage</title>
         <Navbar/>
         <div className="homepage-content">
             <h1>welcome to my blog</h1>

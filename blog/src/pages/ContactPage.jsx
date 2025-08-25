@@ -3,6 +3,7 @@ import './contactpage.css'
 function ContactPage(){
     return(
         <>
+        <title>Contact</title>
         <Navbar/>
         <div className="contact-container">
             <p className="name">Name : Ahsanulhaq</p>
