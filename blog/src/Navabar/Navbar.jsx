@@ -1,3 +1,4 @@
+import { Link } from 'react-router';
 import './navbar.css'
 function Navbar(){
     return(
@@ -8,9 +9,9 @@ function Navbar(){
         </div>
         <div className="nav-right-section">
         <ul className="nav-ul">
-          <li key={1}><a href="/">Home</a></li>
-          <li key={2}><a href="/post">all Post</a></li>
-          <li key={3}><a href="/contact">Contact</a></li>
+          <li key={1}><Link to="/">Home</Link></li>
+          <li key={2}><Link to="/post">all Post</Link></li>
+          <li key={3}><Link to="/contact">Contact</Link></li>
         </ul>
         </div>
     </div>
