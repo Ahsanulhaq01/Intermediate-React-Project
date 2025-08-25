@@ -1,1 +1,28 @@
-
+.homepage-container{
+    min-height:100vh;
+    max-width: 100vw;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.blog-container{
+    max-width: 80vw;
+    width: 100%;
+    background-color: blue;
+    max-height: 150px;
+    border-radius: 10px;
+}
+.blog-title{
+    padding: 2px 8px;
+}.blog-body{
+    padding: 2px 8px;
+}
+.truncate{
+    white-space: nowrap;       /* keep text in single line */
+  overflow: hidden;          /* hide extra text */
+  text-overflow: ellipsis;   /* add ... at the end */
+  width:100%;              /* set fixed width */
+  display: block
+}
