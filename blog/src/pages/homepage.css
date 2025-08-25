@@ -1,0 +1,20 @@
+.homepage-content{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.homepage-content h1{
+    padding: 4px 10px;
+    word-wrap: break-word;
+
+}
+.homepage-content button{
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    border: none;
+}

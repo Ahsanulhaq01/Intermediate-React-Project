@@ -19,6 +19,9 @@
     gap: 50px;
     list-style: none;
     align-items: center;
-    border: 2px solid red;
     padding: 5px 10px ;
+}
+.nav-right-section .nav-ul li a{
+    text-decoration: none;
+    color: white;
 }

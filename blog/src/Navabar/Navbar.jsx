@@ -8,9 +8,9 @@ function Navbar(){
         </div>
         <div className="nav-right-section">
         <ul className="nav-ul">
-          <li key={1}>Home</li>
-          <li key={2}>All Post</li>
-          <li key={3}>Contact</li>
+          <li key={1}><a href="/">Home</a></li>
+          <li key={2}><a href="/post">all Post</a></li>
+          <li key={3}><a href="/contact">Contact</a></li>
         </ul>
         </div>
     </div>
