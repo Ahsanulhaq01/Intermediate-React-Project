@@ -26,7 +26,7 @@ function App() {
     <div className="homepage-container">
       {blogdata.map((blogpost)=>{
         return(
-          <div className="blog-container">
+          <div key={blogpost.id} className="blog-container">
         <div className="blog-title">
           <p className="title-text truncate"><b>{blogpost.title}</b></p>
         </div>
