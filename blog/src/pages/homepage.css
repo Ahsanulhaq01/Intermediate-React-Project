@@ -1,20 +1,41 @@
-.homepage-content{
-    height: 100vh;
+.homepage-content {
+  height: 100dvh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.homepage-content h1 {
+  padding: min(1rem, 0.4%);
+  white-space: nowrap;
+  font-size: clamp(0.9rem, calc(3vw + 1rem), 4rem);
+}
+.homepage-content button {
+  padding: min(1rem, 10%);
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  font-size: clamp(0.8rem , calc(2vw + 10%),1.3rem);
+  white-space: nowrap;
+  border: none;
+}
+
+@media (max-width: 400px) {
+  .homepage-content {
+    height: 100dvh;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
+  }
+  .homepage-content button {
+  border-radius: 10px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+  font-size: clamp(0.8rem , calc(2vw + 10%),1.3rem);
+  border: none;
+  padding: min(1rem,20%);
 }
-.homepage-content h1{
-    padding: 4px 10px;
-    word-wrap: break-word;
-
-}
-.homepage-content button{
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    background-color: black;
-    color: white;
-    font-size: 18px;
-    border: none;
 }

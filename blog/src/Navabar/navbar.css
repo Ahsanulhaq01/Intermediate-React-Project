@@ -1,7 +1,7 @@
 .nav-container{
     background-color: #161349;
     height: 60px;
-    padding: 0px 50px;
+    padding : min(5em , 0.3%);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -12,7 +12,7 @@
     left: 0;
 }
 .logo .menu-img{
-    padding: 10px 15px;
+    padding: min(1rem , 0.4%);
 }
 .nav-right-section .nav-ul{
     display: flex;
@@ -24,4 +24,11 @@
 .nav-right-section .nav-ul li a{
     text-decoration: none;
     color: white;
+    white-space: nowrap;
+}
+
+@media (max-width : 340px) {
+    .menu-img{
+        display: none;
+    }
 }

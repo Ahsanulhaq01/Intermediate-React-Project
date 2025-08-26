@@ -23,7 +23,8 @@ function AllPost(){
     <title>All post</title>
     <Navbar/>
     <div className="homepage-container">
-      {blogdata.map((blogpost)=>{
+      <div className="allPost-sub-container">
+    {blogdata.map((blogpost)=>{
         return(
           <div key={blogpost.id} className="blog-container">
         <div className="blog-title">
@@ -37,6 +38,7 @@ function AllPost(){
       </div>
         )
       })}
+      </div>
     </div>
     </>
   )
