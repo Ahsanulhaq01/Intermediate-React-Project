@@ -16,7 +16,7 @@
   cursor: pointer;
   background-color: black;
   color: white;
-  font-size: clamp(0.8rem , calc(2vw + 10%),1.3rem);
+  font-size: clamp(0.8rem, calc(2vw + 10%), 1.3rem);
   white-space: nowrap;
   border: none;
 }
@@ -30,12 +30,12 @@
     flex-direction: column;
   }
   .homepage-content button {
-  border-radius: 10px;
-  cursor: pointer;
-  background-color: black;
-  color: white;
-  font-size: clamp(0.8rem , calc(2vw + 10%),1.3rem);
-  border: none;
-  padding: min(1rem,20%);
-}
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: black;
+    color: white;
+    font-size: clamp(0.8rem, calc(2vw + 10%), 1.3rem);
+    border: none;
+    padding: min(1rem, 20%);
+  }
 }
