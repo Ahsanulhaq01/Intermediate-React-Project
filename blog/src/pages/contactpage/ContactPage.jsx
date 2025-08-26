@@ -1,4 +1,4 @@
-import Navbar from '../Navabar/Navbar';
+import Navbar from '../../Navabar/Navbar';
 import './contactpage.css'
 function ContactPage(){
     return(

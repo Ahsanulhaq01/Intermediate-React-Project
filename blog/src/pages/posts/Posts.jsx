@@ -1,9 +1,9 @@
 import { useEffect,useState } from "react";
 import axios from "axios";
-import Navbar from "../Navabar/Navbar";
-import '../App.css';
+import Navbar from "../../Navabar/Navbar";
+import './post.css';
 
-function AllPost(){
+function Posts(){
      const [blogdata , setBlogData] = useState([])
  useEffect(()=>{
   const getData = async()=>{
@@ -44,4 +44,4 @@ function AllPost(){
   )
 }
 
-export default AllPost;
+export default Posts;

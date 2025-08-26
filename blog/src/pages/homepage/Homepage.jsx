@@ -1,4 +1,4 @@
-import Navbar from '../Navabar/Navbar';
+import Navbar from '../../Navabar/Navbar';
 import './homepage.css';
 
 function Homepage(){
