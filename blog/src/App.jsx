@@ -8,8 +8,9 @@ function App() {
     <>
       <Routes>
         <Route index element={<Homepage />}></Route>
-        <Route path="post" element={<Posts />}></Route>
+        <Route path="posts" element={<Posts />}></Route>
         <Route path="contact" element={<ContactPage />}></Route>
+        {/* <Route path="post" element={<SinglePost/>}></Route> */}
       </Routes>
     </>
   );

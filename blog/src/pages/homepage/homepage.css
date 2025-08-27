@@ -20,6 +20,11 @@
   white-space: nowrap;
   border: none;
 }
+.link-btn{
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
 
 @media (max-width: 400px) {
   .homepage-content {

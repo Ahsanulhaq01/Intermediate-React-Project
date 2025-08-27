@@ -13,7 +13,7 @@ function Navbar() {
               <Link to="/">Home</Link>
             </li>
             <li key={2}>
-              <Link to="/post">all Post</Link>
+              <Link to="/posts">all Post</Link>
             </li>
             <li key={3}>
               <Link to="/contact">Contact</Link>
