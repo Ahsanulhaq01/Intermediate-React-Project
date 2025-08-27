@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Navbar from "../../Navabar/Navbar";
-import "./post.css";
+import "./posts.css";
 
 function Posts() {
   const [blogdata, setBlogData] = useState([]);

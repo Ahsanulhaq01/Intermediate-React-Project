@@ -1,0 +1,35 @@
+.container {
+  min-height: 100dvh;
+  z-index: 100;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: min(0.4rem, 3%);
+}
+.post-container {
+    border: 1px solid rgb(92, 88, 88);
+    border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.title {
+  padding: min(0.4rem, 3%);
+}
+.body {
+  padding: min(0.4rem, 3%);
+}
+
+@media (max-width: 380px) {
+  .text {
+    overflow: none;
+    text-overflow: ellipsis;
+    width: 100%;
+    display: block;
+    font-size: clamp(0.8rem, 1rem, 0.8rem);
+  }
+}
