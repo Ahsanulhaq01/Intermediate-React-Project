@@ -19,12 +19,16 @@ function Posts() {
     };
     getData();
   }, []);
+
+  function handleSinglePost(event){
+    console.log(event.target)
+  }
   return (
     <>
       <title>All post</title>
       <Navbar />
       <div className="homepage-container">
-        <div className="allPost-sub-container">
+        <div className="allPost-sub-container" onClick={(e)=> handleSinglePost(e)}>
           {blogdata.map((blogpost) => {
             return (
               <div key={blogpost.id} className="blog-container">
