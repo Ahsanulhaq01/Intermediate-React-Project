@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Header from "../components/Header";
+import { formatMoney } from "../utils/formatMoney";
 import ".././App.css";
 function HomePage() {
     const [products , setProducts] = useState([]);
@@ -31,7 +32,7 @@ function HomePage() {
                 <img src={`images/ratings/rating-${((Math.floor(Math.random()*50+1))%5)*10}.png`}alt="rating-image" />
             </div>
             <div className="product-price">
-                <p>{`$${(product.priceCents/100).toFixed(2)}`}</p>
+                <p>{formatMoney(product.priceCents)}</p>
             </div>
             <div className="select-quantity">
                 <select name="quantity-of-product" id="quantity-selector">
