@@ -13,7 +13,7 @@ function Header() {
           </div>
 
           <div className="search-bar-arrow-icon">
-            <i class="fa-solid fa-arrow-right"></i>
+            <i className="fa-solid fa-arrow-right"></i>
           </div>
         
         </div>
@@ -22,7 +22,7 @@ function Header() {
                 <p>Orders</p>
             </div>
             <div className="cart-icon">
-                <i class="fa-solid fa-cart-shopping"></i>
+                <i className="fa-solid fa-cart-shopping"></i>
                 <div className="cart-quantity">
                     <p>3</p>
                 </div>
