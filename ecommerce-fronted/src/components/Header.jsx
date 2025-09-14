@@ -1,11 +1,13 @@
 import React from "react";
 import "./header.css";
+import { Link } from "react-router";
+import Orders from "../pages/Orders";
 function Header() {
   return (
     <>
       <div className="header">
         <div className="header-name">
-            <p>Ecommerce Store</p>
+            <Link to="/">Ecommerce Store</Link>
         </div>
         <div className="search-bar">
           <div className="search-bar-input">
@@ -19,7 +21,7 @@ function Header() {
         </div>
         <div className="header-menu">
             <div className="orders">
-                <p>Orders</p>
+                <Link to ="/orders">Orders</Link>
             </div>
             <div className="cart-icon">
                 <i className="fa-solid fa-cart-shopping"></i>

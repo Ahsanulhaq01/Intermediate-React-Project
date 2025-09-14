@@ -15,7 +15,11 @@
   font-size: 1.4rem;
   padding: 0.3rem 0.8rem;
   border-radius: 0.2rem;
-  flex-shrink: 1;
+  
+}
+.header-name a{
+  color: white;
+  text-decoration: none;
 }
 .search-bar{
   display: flex;
@@ -77,4 +81,8 @@
 }
 .cart-quantity p{
   font-size: 1.1rem;
+}
+.orders a{
+  text-decoration: none;
+  color: white;
 }
