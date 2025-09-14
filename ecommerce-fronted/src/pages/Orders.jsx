@@ -31,9 +31,12 @@ function Orders() {
             </div>
           
         </div>
+<<<<<<< HEAD
         <div className="image">
           <img src="" alt="" />
         </div>
+=======
+>>>>>>> cfd63c730c5d8080c2be7c03f4759abd03568ef3
 
         </div>
 
