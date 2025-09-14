@@ -31,14 +31,34 @@ function Orders() {
             </div>
           
         </div>
-<<<<<<< HEAD
-        <div className="image">
-          <img src="" alt="" />
+        <div className="product-details">
+          <div className="image">
+          <img src="images/products/athletic-cotton-socks-6-pairs.jpg" alt="image" />
         </div>
-=======
->>>>>>> cfd63c730c5d8080c2be7c03f4759abd03568ef3
+        <div className="text-and-button">
+          <div className="product-text">
+            <p className="product-name">Black and Gray Athletic Cotton Socks - 6 Pairs</p>
+            <div className="delivery-data">
+                <p className="delivery-text">
+                  Arriving on:
+                </p>
+                <p className="delivery-date"> September 20</p>
+            </div>
+            <div className="add-to-cart">
+              <i className="fa-solid fa-cart-shopping"></i>
+              <button>add to cart</button></div>
+          </div>
+            <div className="track-button">
+              <button className="track-package">
+                Track Package
+              </button>
+            </div>
+        </div>
 
         </div>
+        
+
+        </div> 
 
 
       </div>
