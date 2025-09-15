@@ -24,10 +24,13 @@ function Header() {
                 <Link to ="/orders">Orders</Link>
             </div>
             <div className="cart-icon">
-                <i className="fa-solid fa-cart-shopping"></i>
+              <Link to='/checkout'>
+              <i className="fa-solid fa-cart-shopping"></i>
                 <div className="cart-quantity">
                     <p>3</p>
                 </div>
+              </Link>
+                
             </div>
         </div>
       </div>
