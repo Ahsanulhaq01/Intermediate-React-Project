@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
+import { Link } from "react-router";
 import "./orders.css";
 
 function Orders() {
@@ -50,7 +51,7 @@ function Orders() {
           </div>
             <div className="track-button">
               <button className="track-package">
-                Track Package
+                <Link to ="/tracking">Track Package</Link>
               </button>
             </div>
         </div>

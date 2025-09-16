@@ -1,0 +1,78 @@
+.tracking-page {
+  display: flex;
+  border: 2px solid red;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+.order-tracking {
+  text-align: center;
+  width: 60%;
+  position: relative;
+  top: 2rem;
+}
+.order-tracking .back-to-orders-link {
+    display: inline-block;
+  padding: 0.3rem 0.8rem;
+  margin-bottom: 10px;
+  color: #1b8856;
+}
+.delivery-date {
+  margin-top: 1.5rem;
+}
+.delivery-date p {
+  font-weight: bold;
+  font-size: 1.4rem;
+}
+.product-info {
+  margin-top: 1.2rem;
+}
+.product-image {
+  width: 150px;
+  margin: 2rem 0rem;
+}
+.progress-label-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.3rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.progress-bar-container {
+  margin-top: 0.8rem;
+  height: 25px;
+  border: 1px solid rgb(194, 194, 194);
+  border-radius: 50px;
+  overflow: hidden;
+  
+}
+.progress-label{
+    padding: 0.2rem 0.5rem;
+}
+.progress-bar{
+    background-color: rgb(15, 175, 1);
+    height: 100%;
+    border-radius: 50px;
+    transition: width 0.3s ease-in-out;
+}
+.current-status {
+  color: #198754;
+
+}
+
+@media (max-width : 598px) {
+    .progress-label-container{
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .order-tracking{
+        width: 90%;
+        margin: 1rem;
+    }
+    .product-image{
+        width: 120px;
+    }
+}
+
