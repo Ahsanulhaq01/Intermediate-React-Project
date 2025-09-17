@@ -79,11 +79,11 @@
   font-weight: bold;
 }
 
-.delivery-data {
+.order-delivery-data {
   display: flex;
   gap: 0.3rem;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   flex-wrap: wrap;
   width: 100%;
 }
@@ -117,6 +117,10 @@
   width: auto;
   min-width: 150px;
   margin-right: 0;
+}
+.track-button a{
+  color: black;
+  text-decoration: none;
 }
 
 .track-button button {
