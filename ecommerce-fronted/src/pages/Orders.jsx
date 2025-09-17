@@ -1,4 +1,3 @@
-import React from "react";
 import Header from "../components/Header";
 import { Link } from "react-router";
 import "./orders.css";
@@ -39,11 +38,12 @@ function Orders() {
         <div className="text-and-button">
           <div className="product-text">
             <p className="product-name">Black and Gray Athletic Cotton Socks - 6 Pairs</p>
-            <div className="delivery-data">
+            <div className="order-delivery-data">
                 <p className="delivery-text">
                   Arriving on:
                 </p>
-                <p className="delivery-date"> September 20</p>
+                <p className="order-delivery-date"> September 20</p>
+                
             </div>
             <div className="add-to-cart">
               <i className="fa-solid fa-cart-shopping"></i>
