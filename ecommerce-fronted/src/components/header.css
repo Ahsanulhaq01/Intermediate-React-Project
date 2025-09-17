@@ -86,3 +86,9 @@
   text-decoration: none;
   color: white;
 }
+
+@media (max-width : 520px) {
+  .header-name{
+    display: none;
+  }
+}
