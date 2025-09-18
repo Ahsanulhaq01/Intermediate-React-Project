@@ -1,8 +1,12 @@
-import React from "react";
-import { Link } from "react-router";
+import { Link} from "react-router";
+import { formatMoney } from "../utils/formatMoney";
 import "./checkout.css";
+import { useEffect } from "react";
 
-function Checkout() {
+function Checkout({cart , loadCart}) {
+    useEffect(()=>{
+      loadCart();
+    } , [])
   return (
     <>
       <div className="checkout-page">
@@ -24,7 +28,7 @@ function Checkout() {
             <p className="reveiw-order">Review yours orders</p>
           </div>
           <div className="delivery-and-payment-container">
-             <aside>
+             
                <div className="payment-summary-container">
               <div className="payment-summary">
                 <p className="payment-summary-heading">Payment Summary</p>
@@ -55,8 +59,12 @@ function Checkout() {
                 </div>
               </div>
             </div>
-            </aside>
-            <div className="delivery-container">
+           
+            {cart.map((cartItem)=>{
+
+              return(
+                <div key={cartItem.id}
+                className="delivery-container">
               
               <div className="delivery-option-and-product-details">
                 <div className="delivery-data">
@@ -66,17 +74,17 @@ function Checkout() {
               </div>
                 <div className="product-details-container">
                   <img
-                    src="images/products/athletic-cotton-socks-6-pairs.jpg"
+                    src={cartItem.product.image}
                     alt="image"
                    
                   />
                   <div className="products-details">
                     <p className="name-of-products">
-                      Adults Plain Cotton T-Shirt - 2 Pack
+                      {cartItem.product.name}
                     </p>
-                    <p className="product-price">$7.99</p>
+                    <p className="product-price">{formatMoney(cartItem.product.priceCents)}</p>
                     <div className="quantity-modification-container">
-                      <div className="product-quantity">Quantity : 1</div>
+                      <div className="product-quantity">Quantity : {cartItem.quantity}</div>
                       <div className="quantity-btns">
                         <button>Update</button>
                         <button>Delete</button>
@@ -136,7 +144,10 @@ function Checkout() {
                     </div>
                     </label>
                 </div>
-            </div>           
+            </div> 
+              )
+            })}
+                      
           </div>
         </div>
       </div>
