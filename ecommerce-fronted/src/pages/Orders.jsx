@@ -10,7 +10,6 @@ function Orders() {
   async function getOrdersData() {
     const response = await axios.get("api/orders?expand=products");
     setOrders(response.data);
-    console.log(response.data);
   }
   useEffect(() => {
     getOrdersData();
@@ -42,9 +41,6 @@ function Orders() {
                 </div>
                 {/* <hr style={{ border: "1px solid gray", margin: "20px 0" }}/> */}
                 {order.products.map((prod) => {
-                  {
-                    console.log(prod);
-                  }
                   return (
                     <div className="product-details" key={prod.productId}>
                       <div className="image">

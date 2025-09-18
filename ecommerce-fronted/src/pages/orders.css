@@ -6,7 +6,6 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  z-index: -1000;
   height: auto;
   gap: 1rem;
   padding: 1rem; 
