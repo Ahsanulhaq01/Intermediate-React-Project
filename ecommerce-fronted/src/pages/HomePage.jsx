@@ -7,8 +7,7 @@ import ".././App.css";
 function HomePage() {
     const [products , setProducts] = useState([]);
     const getProductData = async ()=>{
-        const response = await axios.get('http://localhost:3000/api/products/');
-        console.log(response.data)
+        const response = await axios.get('api/products/');
         setProducts(response.data)
     }
     useEffect(()=>{
