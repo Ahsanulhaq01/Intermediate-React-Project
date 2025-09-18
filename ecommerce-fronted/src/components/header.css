@@ -10,6 +10,7 @@
   gap: 3rem;
   color: white;
   position: fixed;
+  z-index: 1000;
 }
 .header-name{
   font-size: 1.4rem;

@@ -195,7 +195,7 @@
 .free-shipping-container{
     display: flex;
     align-items: center;
-    /* justify-content: center; */
+    cursor: pointer;
     gap: 0.8rem;
 }
 .date-delivery-method{

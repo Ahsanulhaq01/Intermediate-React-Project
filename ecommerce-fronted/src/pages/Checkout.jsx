@@ -90,6 +90,7 @@ function Checkout() {
                     <div className="option-heading">
                         <p>Choose a delivery option:</p>
                     </div>
+                    <label >
                     <div className="free-shipping-container">
                         <input type="radio" 
                         value={1}
@@ -103,6 +104,8 @@ function Checkout() {
                             </p>
                         </div>
                     </div>
+                    </label>
+                    <label>
                      <div className="free-shipping-container">
                         <input type="radio" 
                         value={1}
@@ -116,6 +119,8 @@ function Checkout() {
                             </p>
                         </div>
                     </div>
+                    </label>
+                    <label>
                      <div className="free-shipping-container">
                         <input type="radio" 
                         value={1}
@@ -129,6 +134,7 @@ function Checkout() {
                             </p>
                         </div>
                     </div>
+                    </label>
                 </div>
             </div>           
           </div>
