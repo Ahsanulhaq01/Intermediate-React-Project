@@ -1,5 +1,5 @@
 import { Link} from "react-router";
-import { formatMoney } from "../utils/formatMoney";
+import { formatMoney } from "../../utils/formatMoney";
 import "./checkout.css";
 import { useEffect } from "react";
 

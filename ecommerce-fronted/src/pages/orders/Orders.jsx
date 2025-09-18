@@ -1,4 +1,4 @@
-import Header from "../components/Header";
+import Header from "../../components/Header";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import "./orders.css";

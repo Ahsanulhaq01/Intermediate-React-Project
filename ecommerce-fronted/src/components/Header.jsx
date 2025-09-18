@@ -1,7 +1,7 @@
 import React from "react";
 import "./header.css";
 import { Link } from "react-router";
-import Orders from "../pages/Orders";
+import Orders from "../pages/orders/Orders";
 function Header() {
   return (
     <>
