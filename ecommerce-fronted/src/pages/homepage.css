@@ -55,3 +55,15 @@
   border: none;
   cursor: pointer;
 }
+.added-to-cart img{
+  max-width: 16px;
+}
+.added-to-cart{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-width: 100px;
+  color: #198754;
+  
+}

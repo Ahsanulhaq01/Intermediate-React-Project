@@ -18,7 +18,7 @@ function HomePage() {
         await axios.post('/api/cart-items',{
             productId ,
             quantity,
-        })
+        })       
        
     }
   return (
@@ -59,8 +59,8 @@ function HomePage() {
             </div>
             <div className="product-spacer"></div>
             <div className="added-to-cart" style={{opacity : 0}}>
-                Added
-                {/* <img src="" alt="" /> */}
+                <img src="../src/assets/images/icons/checkmark.png" alt="checkmark-image" />
+                <p className="added-text">Added</p>
             </div>
             <div className="add-to-cart-buttons">
                 <button className="add-to-cart-btn" onClick={()=>{
