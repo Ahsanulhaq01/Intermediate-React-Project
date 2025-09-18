@@ -13,6 +13,14 @@ function HomePage() {
     useEffect(()=>{
         getProductData()
     },[])
+
+    async function addToCart(productId , quantity){
+        await axios.post('/api/cart-items',{
+            productId ,
+            quantity,
+        })
+       
+    }
   return (
     <>
     <Header/>
@@ -55,7 +63,9 @@ function HomePage() {
                 {/* <img src="" alt="" /> */}
             </div>
             <div className="add-to-cart-buttons">
-                <button className="add-to-cart-btn">add to cart</button>
+                <button className="add-to-cart-btn" onClick={()=>{
+                    addToCart(product.id, 1)
+                }}>add to cart</button>
             </div>
         </div>
             )
