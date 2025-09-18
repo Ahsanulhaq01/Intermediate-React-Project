@@ -9,6 +9,7 @@
     min-height: 60px;
     min-width: 100%;
     position: fixed;
+    background-color: white;
     z-index: 100;
 }
 .checkout-header-logo a {
@@ -56,11 +57,11 @@
 }
 .delivery-and-payment-container{
     display: flex;
+    flex-direction: column;
     margin-top: 10px;
     padding: 0.3rem 1rem;
-    min-width: 100%;
-    z-index: -100;
-    position: relative;
+    min-width: 60%;
+    justify-content: space-between;
    
 }
 .delivery-container{
@@ -68,9 +69,7 @@
     border: 1px solid rgba(33, 33, 33, 0.479);
     border-radius: 2px;
     justify-content: space-between;
-    /* max-width: 100%;   */
-    position: absolute;
-    left: 4rem;
+    /* max-width: 50%;   */
 }
 .delivery-data{
     margin: 0.5rem 0rem;
@@ -135,8 +134,7 @@
     min-width: 30%;
     text-align: center;
     border-radius: 2px;
-    position: absolute;
-    right: 4rem;
+    
   
 }
 .payment-summary{
@@ -232,11 +230,8 @@
     }
     .delivery-container{
         flex-direction: column;
-        position: relative;
         width: 100%;
         gap: 0.5rem;
-        right: auto;
-        left: auto;
         
     }
     .delivery-data{
