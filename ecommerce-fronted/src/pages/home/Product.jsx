@@ -1,15 +1,22 @@
+import { useState } from 'react'
 import { formatMoney } from '../../utils/formatMoney'
 import axios from 'axios'
 
-function Product({product}) {
-
+function Product({product , loadCart}) {
+    const [checkmark , setCheckMark] = useState(false)
     async function addToCart(productId , quantity){
         await axios.post('/api/cart-items',{
             productId ,
             quantity,
         })       
-       
+       setCheckMark(true);
+       setTimeout(() => {
+        setCheckMark(false)
+       }, 2000);
+
+      await loadCart();
     }
+    console.log('hello apksitan')
   return (
      <div className="products" key={product.id}>
             <div className="product-image">
@@ -42,7 +49,7 @@ function Product({product}) {
                 </select>
             </div>
             <div className="product-spacer"></div>
-            <div className="added-to-cart" style={{opacity : 0}}>
+            <div className="added-to-cart" style={{opacity : checkmark ? 1 : 0}}>
                 <img src="../src/assets/images/icons/checkmark.png" alt="checkmark-image" />
                 <p className="added-text">Added</p>
             </div>

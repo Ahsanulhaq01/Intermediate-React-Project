@@ -3,7 +3,7 @@ import { Route,Routes } from "react-router";
 import Orders from "./pages/orders/Orders";
 import Checkout from './pages/checkout/Checkout'
 import Tracking from "./pages/tracking/Tracking";
-import { useState} from "react";
+import { useState } from "react";
 import axios from "axios";
 
 function App(){
@@ -12,10 +12,9 @@ function App(){
     const response = await axios.get('/api/cart-items?expand=product');
     setCart(response.data)
   }
-
     return(
         <Routes>
-            <Route index element={<HomePage/>}></Route>
+            <Route index element={<HomePage loadCart={loadCart}/>}></Route>
             <Route path="orders" element={<Orders/>}></Route>
             <Route path="checkout" element={<Checkout cart={cart} loadCart={loadCart} />}></Route>
             <Route path="tracking" element={<Tracking/>}></Route>

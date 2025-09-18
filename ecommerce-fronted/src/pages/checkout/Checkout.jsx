@@ -1,12 +1,10 @@
 import { Link} from "react-router";
 import { formatMoney } from "../../utils/formatMoney";
 import "./checkout.css";
-import { useEffect } from "react";
 
-function Checkout({cart , loadCart}) {
-    useEffect(()=>{
-      loadCart();
-    } , [])
+
+function Checkout({cart}) {
+  
   return (
     <>
       <div className="checkout-page">

@@ -2,14 +2,14 @@ import Header from "../../components/Header";
 import ProductGrid from "./ProductGrid";
 import './homepage.css'
 import "../.././App.css";
-function HomePage() {
+function HomePage({loadCart}) {
     
 
     
   return (
     <>
     <Header/>
-    <ProductGrid />
+    <ProductGrid loadCart={loadCart} />
     </>
   );
 }
