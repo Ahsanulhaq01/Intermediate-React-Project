@@ -8,7 +8,7 @@ function Checkout({cart ,loadCart}) {
 
     useEffect(()=>{
        loadCart();
-    } ,[])
+    } ,[loadCart])
   return (
     <>
       <div className="checkout-page">
