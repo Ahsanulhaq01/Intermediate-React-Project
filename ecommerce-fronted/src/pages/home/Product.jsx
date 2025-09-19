@@ -3,6 +3,7 @@ import { formatMoney } from '../../utils/formatMoney'
 import axios from 'axios'
 
 function Product({product , loadCart}) {
+    const [quantity , setQuantity] = useState(1)
     const [checkmark , setCheckMark] = useState(false)
     async function addToCart(productId , quantity){
         await axios.post('/api/cart-items',{
@@ -15,6 +16,10 @@ function Product({product , loadCart}) {
        }, 2000);
 
       await loadCart();
+    }
+    function handleSelectChange(e){
+        const value = Number(e.target.value);
+        setQuantity(value);
     }
   return (
      <div className="products" key={product.id}>
@@ -32,7 +37,7 @@ function Product({product , loadCart}) {
             <div className="product-price">
                 <p>{formatMoney(product.priceCents)}</p>
             </div>
-            <div className="select-quantity">
+            <div className="select-quantity" value={quantity} onChange={handleSelectChange}>
                 <select name="quantity-of-product" id="quantity-selector">
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -54,7 +59,7 @@ function Product({product , loadCart}) {
             </div>
             <div className="add-to-cart-buttons">
                 <button className="add-to-cart-btn" onClick={()=>{
-                    addToCart(product.id, 1)
+                    addToCart(product.id, quantity)
                 }}>add to cart</button>
             </div>
         </div>

@@ -66,6 +66,7 @@
 .cart-icon{
   position: relative;
   padding: 0.7rem;
+
 }
 
 .cart-icon .fa-cart-shopping{
@@ -74,11 +75,13 @@
 .cart-quantity{
   position: absolute;
   top: 2px;
-  left: 20px;
+  left: 18px;
   color: black;
   padding: 0.4rem 0.4rem;
   cursor: pointer;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;  
 }
 .cart-quantity p{
   font-size: 1.1rem;
