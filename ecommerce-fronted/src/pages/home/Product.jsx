@@ -16,7 +16,6 @@ function Product({product , loadCart}) {
 
       await loadCart();
     }
-    console.log('hello apksitan')
   return (
      <div className="products" key={product.id}>
             <div className="product-image">
