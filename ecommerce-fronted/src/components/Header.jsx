@@ -5,7 +5,7 @@ function Header({ cart, loadCart}) {
   let cartQuantity = 0;
   useEffect(()=>{
     loadCart();
-  } ,[])
+  } ,[loadCart])
   cart.forEach((cartItem) => {
     cartQuantity += cartItem.quantity;
   });
