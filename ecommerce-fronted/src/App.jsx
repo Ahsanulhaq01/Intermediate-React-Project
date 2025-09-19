@@ -14,7 +14,7 @@ function App(){
   }
     return(
         <Routes>
-            <Route index element={<HomePage loadCart={loadCart}/>}></Route>
+            <Route index element={<HomePage loadCart={loadCart} cart={cart}/>}></Route>
             <Route path="orders" element={<Orders/>}></Route>
             <Route path="checkout" element={<Checkout cart={cart} loadCart={loadCart} />}></Route>
             <Route path="tracking" element={<Tracking/>}></Route>
