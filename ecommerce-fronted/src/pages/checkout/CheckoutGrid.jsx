@@ -1,12 +1,38 @@
+import { useState } from "react";
 import axios from "axios";
 import { formatMoney } from "../../utils/formatMoney";
 
 function CheckoutGrid({ cartItem, loadCart }) {
-  async function deleteCartItem(productId) {
-    await axios.delete(`/api/cart-items/${productId}`);
+  const [isEdited, setIsEdited] = useState(false);
+  const [quantity, setQuantity] = useState(cartItem.quantity);
+
+  async function deleteCartItem() {
+    await axios.delete(`/api/cart-items/${cartItem.productId}`);
     await loadCart();
   }
 
+  async function updateCartItem() {
+    await axios.put(`/api/cart-items/${cartItem.productId}`, {
+      quantity,
+    });
+    await loadCart();
+  }
+  function updateOnChange(e) {
+    setQuantity(Number(e.target.value));
+  }
+  function toggleUpdate() {
+    setIsEdited(true);
+  }
+  function handleKeyDown(e){
+    if(e.key === 'Enter'){
+      setIsEdited(false);
+      updateCartItem();
+    }
+    else if(e.key === 'Escape'){
+      setIsEdited(false);
+      setQuantity(cartItem.quantity)
+    }
+  }
   return (
     <div className="delivery-container">
       <div className="delivery-option-and-product-details">
@@ -21,15 +47,19 @@ function CheckoutGrid({ cartItem, loadCart }) {
               {formatMoney(cartItem.product.priceCents)}
             </p>
             <div className="quantity-modification-container">
-              <div className="product-quantity">
-                Quantity : {cartItem.quantity}
-              </div>
+              {isEdited ? (
+                <input type="number" value={quantity} onChange={updateOnChange} onKeyDown={handleKeyDown} style={{width : 100}} />
+              ) : (
+                <div className="product-quantity">
+                  Quantity : {cartItem.quantity}
+                </div>
+              )}
 
               <div className="quantity-btns">
-                <button>Update</button>
+                <button onClick={toggleUpdate}>Update</button>
                 <button
                   onClick={() => {
-                    deleteCartItem(cartItem.productId);
+                    deleteCartItem();
                   }}
                 >
                   Delete
