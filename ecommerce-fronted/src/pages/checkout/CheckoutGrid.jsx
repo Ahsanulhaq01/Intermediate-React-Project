@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { formatMoney } from "../../utils/formatMoney";
+import DeliveryOptions from "./DeliveryOptions";
 
 function CheckoutGrid({ cartItem, loadCart }) {
   const [isEdited, setIsEdited] = useState(false);
@@ -69,7 +70,7 @@ function CheckoutGrid({ cartItem, loadCart }) {
           </div>
         </div>
       </div>
-      <div className="select-delivery-option-container">
+      {/* <div className="select-delivery-option-container">
         <div className="option-heading">
           <p>Choose a delivery option:</p>
         </div>
@@ -100,7 +101,8 @@ function CheckoutGrid({ cartItem, loadCart }) {
             </div>
           </div>
         </label>
-      </div>
+      </div> */}
+      <DeliveryOptions/>
     </div>
   );
 }
