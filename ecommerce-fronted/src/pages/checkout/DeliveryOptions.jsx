@@ -1,52 +1,59 @@
-import axios from "axios"
+import axios from "axios";
 import { useEffect, useState } from "react";
+import dayjs from "dayjs";
+import { formatMoney } from "../../utils/formatMoney";
 
-function DeliveryOptions() {
-    const [deliveryOption , setDeliveryOption] = useState([])
-    async function getDeliveryData() {
-        const response = await axios.get(`/api/delivery-options?expand=estimatedDeliveryTime`);
-        setDeliveryOption(response.data);
-        console.log(response.data)
-    }
+function DeliveryOptions({ loadCart, cartItem }) {
+  const [DeliveryOptions, setDeliveryOptions] = useState([]);
+  async function getDeliveryData() {
+    const response = await axios.get(
+      `/api/delivery-options?expand=estimatedDeliveryTime`
+    );
+    setDeliveryOptions(response.data);
+  }
 
-    useEffect(()=>{
-        getDeliveryData();
-
-    },[])
+  useEffect(() => {
+    getDeliveryData();
+  }, []);
   return (
     <div className="select-delivery-option-container">
-        <div className="option-heading">
-          <p>Choose a delivery option:</p>
-        </div>
-        <label>
-          <div className="free-shipping-container">
-            <input type="radio" value={1} name="option" />
-            <div className="date-delivery-method">
-              <p className="date-para">Monday, September 22</p>
-              <p className="shipping-method-para">Free Shipping</p>
-            </div>
-          </div>
-        </label>
-        <label>
-          <div className="free-shipping-container">
-            <input type="radio" value={1}  name="option" />
-            <div className="date-delivery-method">
-              <p className="date-para">Thursday, September 18</p>
-              <p className="shipping-method-para">$4.99-Shipping</p>
-            </div>
-          </div>
-        </label>
-        <label>
-          <div className="free-shipping-container">
-            <input type="radio" value={1} name="option" />
-            <div className="date-delivery-method">
-              <p className="date-para">Tuesday, September 16</p>
-              <p className="shipping-method-para">$9.99-Shipping</p>
-            </div>
-          </div>
-        </label>
+      <div className="option-heading">
+        <p>Choose a delivery option:</p>
       </div>
-  )
+      {DeliveryOptions.map((deliveryOption) => {
+        let priceString = deliveryOption.priceCents > 0 ? `${formatMoney(deliveryOption.priceCents)}-shipping` : 'Free Shipping';
+          async function updateDeliveryOption() {
+            await axios.put(`/api/cart-items/${cartItem.productId}`, {
+              deliveryOptionId: deliveryOption.id,
+            });
+            await loadCart();
+          }
+          return (
+            <div
+              className="free-shipping-container"
+              key={deliveryOption.id}
+              onClick={updateDeliveryOption}
+            >
+              <input
+                type="radio"
+                name={`delivery-option-${cartItem.productId}`}
+                checked={deliveryOption.id === cartItem.deliveryOptionId}
+                onChange={() => {}}
+              />
+              <div className="date-delivery-method">
+                <p className="date-para">
+                  {dayjs(deliveryOption.estimatedDeliveryTimeMs).format(
+                    "dddd MMMM D"
+                  )}
+                </p>
+                <p className="shipping-method-para">{priceString}</p>
+              </div>
+            </div>
+          );
+        
+      })}
+    </div>
+  );
 }
 
-export default DeliveryOptions
+export default DeliveryOptions;

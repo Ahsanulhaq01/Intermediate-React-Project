@@ -70,7 +70,7 @@ function CheckoutGrid({ cartItem, loadCart }) {
           </div>
         </div>
       </div>
-      <DeliveryOptions/>
+      <DeliveryOptions loadCart={loadCart} cartItem={cartItem}/>
     </div>
   );
 }
