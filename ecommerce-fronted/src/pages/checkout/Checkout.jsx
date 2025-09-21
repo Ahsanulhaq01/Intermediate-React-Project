@@ -32,7 +32,7 @@ function Checkout({cart ,loadCart}) {
           </div>
           <div className="delivery-and-payment-container">
              
-             <PaymentSummary/>
+             <PaymentSummary cart={cart}/>
            
             {cart.map((cartItem)=>{
 
