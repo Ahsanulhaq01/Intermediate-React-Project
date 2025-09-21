@@ -9,7 +9,7 @@ function Checkout({cart ,loadCart}) {
 
     useEffect(()=>{
        loadCart();
-    } ,[])
+    })
   return (
     <>
       <div className="checkout-page">

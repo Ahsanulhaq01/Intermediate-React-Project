@@ -1,12 +1,10 @@
-import { useEffect } from "react";
 import "./header.css";
 import { Link } from "react-router";
 function Header({ cart, loadCart}) {
   let cartQuantity = 0;
-  useEffect(()=>{
-    loadCart();
-  } ,[])
-  cart.forEach((cartItem) => {
+ 
+   loadCart
+  cart?.forEach((cartItem) => {
     cartQuantity += cartItem.quantity;
   });
 
