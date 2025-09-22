@@ -1,17 +1,9 @@
-import { useState ,useEffect } from 'react';
-import axios from 'axios'
+import { useContext} from 'react';
+import { HomeContext } from './homeContext/HomeContext';
 import Product from './Product';
 
 function ProductGrid({loadCart}) {
-    const [products , setProducts] = useState([]);
-    const getProductData = async ()=>{
-        const response = await axios.get('api/products/');
-        setProducts(response.data)
-    }
-    useEffect(()=>{
-        getProductData()
-    },[])
-    
+    const products = useContext(HomeContext)
   return (
     <div className="products-grid">
         {products.map((product)=>{
