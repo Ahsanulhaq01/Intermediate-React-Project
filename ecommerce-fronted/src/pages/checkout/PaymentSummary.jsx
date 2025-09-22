@@ -11,6 +11,10 @@ function PaymentSummary({cart}) {
   useEffect(()=>{
     getPaymentData();
   } , [cart])
+
+  async function createOrder() {
+    axios.post(`/api/orders`)
+  }
   return (
      <div className="payment-summary-container">
               <div className="payment-summary">
@@ -38,7 +42,7 @@ function PaymentSummary({cart}) {
                   <p className="order-cost">{formatMoney(paymentSummary.totalCostCents)}</p>
                 </div>
                 <div className="place-order-button">
-                  <button className="place-order">Place your order</button>
+                  <button className="place-order" onClick={createOrder}>Place your order</button>
                 </div>
               </div>
             </div>
