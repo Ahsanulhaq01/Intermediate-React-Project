@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState , useEffect } from "react";
 import axios from "axios";
 import { formatMoney } from "../../utils/formatMoney";
 import DeliveryOptions from "./DeliveryOptions";
@@ -6,6 +6,17 @@ import DeliveryOptions from "./DeliveryOptions";
 function CheckoutGrid({ cartItem, loadCart }) {
   const [isEdited, setIsEdited] = useState(false);
   const [quantity, setQuantity] = useState(cartItem.quantity);
+  const [deliveryOptions, setDeliveryOptions] = useState([]);
+  async function getDeliveryData() {
+    const response = await axios.get(
+      `/api/delivery-options?expand=estimatedDeliveryTime`
+    );
+    setDeliveryOptions(response.data);
+  }
+
+  useEffect(() => {
+    getDeliveryData();
+  }, []);
 
   async function deleteCartItem() {
     await axios.delete(`/api/cart-items/${cartItem.productId}`);
@@ -34,6 +45,7 @@ function CheckoutGrid({ cartItem, loadCart }) {
       setQuantity(cartItem.quantity)
     }
   }
+
   return (
     <div className="delivery-container">
       <div className="delivery-option-and-product-details">
@@ -70,7 +82,7 @@ function CheckoutGrid({ cartItem, loadCart }) {
           </div>
         </div>
       </div>
-      <DeliveryOptions loadCart={loadCart} cartItem={cartItem}/>
+      <DeliveryOptions loadCart={loadCart} cartItem={cartItem} deliveryOptions={deliveryOptions}/>
     </div>
   );
 }

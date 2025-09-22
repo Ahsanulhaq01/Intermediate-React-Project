@@ -1,26 +1,14 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
 import dayjs from "dayjs";
 import { formatMoney } from "../../utils/formatMoney";
 
-function DeliveryOptions({ loadCart, cartItem }) {
-  const [DeliveryOptions, setDeliveryOptions] = useState([]);
-  async function getDeliveryData() {
-    const response = await axios.get(
-      `/api/delivery-options?expand=estimatedDeliveryTime`
-    );
-    setDeliveryOptions(response.data);
-  }
-
-  useEffect(() => {
-    getDeliveryData();
-  }, []);
+function DeliveryOptions({ loadCart, cartItem  , deliveryOptions}) {
   return (
     <div className="select-delivery-option-container">
       <div className="option-heading">
         <p>Choose a delivery option:</p>
       </div>
-      {DeliveryOptions.map((deliveryOption) => {
+      {deliveryOptions.map((deliveryOption) => {
         let priceString = deliveryOption.priceCents > 0 ? `${formatMoney(deliveryOption.priceCents)}-shipping` : 'Free Shipping';
           async function updateDeliveryOption() {
             await axios.put(`/api/cart-items/${cartItem.productId}`, {
