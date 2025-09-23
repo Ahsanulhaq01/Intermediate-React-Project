@@ -1,9 +1,11 @@
-import { useState , useEffect } from "react";
+import { useState , useEffect, useContext } from "react";
 import axios from "axios";
 import { formatMoney } from "../../utils/formatMoney";
 import DeliveryOptions from "./DeliveryOptions";
+import { CartContext } from "./cartContext/loadcart";
 
-function CheckoutGrid({ cartItem, loadCart }) {
+function CheckoutGrid({ cartItem}) {
+  const {loadCart} = useContext(CartContext)
   const [isEdited, setIsEdited] = useState(false);
   const [quantity, setQuantity] = useState(cartItem.quantity);
   const [deliveryOptions, setDeliveryOptions] = useState([]);
@@ -82,7 +84,7 @@ function CheckoutGrid({ cartItem, loadCart }) {
           </div>
         </div>
       </div>
-      <DeliveryOptions loadCart={loadCart} cartItem={cartItem} deliveryOptions={deliveryOptions}/>
+      <DeliveryOptions cartItem={cartItem} deliveryOptions={deliveryOptions}/>
     </div>
   );
 }
