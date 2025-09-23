@@ -1,10 +1,12 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
 import { formatMoney } from '../../utils/formatMoney'
 import axios from 'axios'
+import { CartContext } from '../checkout/cartContext/loadcart';
 
-function Product({product , loadCart}) {
+function Product({product}) {
     const [quantity , setQuantity] = useState(1)
-    const [checkmark , setCheckMark] = useState(false)
+    const [checkmark , setCheckMark] = useState(false);
+    const {loadCart} = useContext(CartContext)
     async function addToCart(productId , quantity){
         await axios.post('/api/cart-items',{
             productId ,
