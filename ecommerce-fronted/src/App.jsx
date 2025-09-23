@@ -3,16 +3,18 @@ import { Route,Routes } from "react-router";
 import Orders from "./pages/orders/Orders";
 import Checkout from './pages/checkout/Checkout'
 import Tracking from "./pages/tracking/Tracking";
-import { useState } from "react";
 import { ContextHome } from "./pages/home/homeContext/ContextHome";
-import axios from "axios";
+import { CartContext } from "./pages/checkout/cartContext/loadcart";
+import { useContext } from "react";
+import ProviderComponent from "./pages/checkout/cartContext/CartContextProvider";
 
 function App(){
-    const [cart , setCart] = useState([])
-  const loadCart = async()=>{
-    const response = await axios.get('/api/cart-items?expand=product');
-    setCart(response.data)
-  }
+  const {cart , loadCart} = useContext(CartContext);
+  //   const [cart , setCart] = useState([])
+  // const loadCart = async()=>{
+  //   const response = await axios.get('/api/cart-items?expand=product');
+  //   setCart(response.data)
+  // }
     return(
       <ContextHome>
         <Routes>
