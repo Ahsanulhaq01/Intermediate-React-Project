@@ -1,12 +1,14 @@
 import { Link} from "react-router";
 import "./checkout.css";
 import CheckoutGrid from "./CheckoutGrid";
-import { useEffect } from "react";
+import { useEffect,useContext } from "react";
 import PaymentSummary from "./PaymentSummary";
+import { CartContext } from "./cartContext/loadcart";
 
 
-function Checkout({cart ,loadCart}) {
 
+function Checkout() {
+  const {loadCart , cart} = useContext(CartContext);
     useEffect(()=>{
        loadCart();
     })

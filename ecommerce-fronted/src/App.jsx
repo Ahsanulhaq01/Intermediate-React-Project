@@ -20,7 +20,7 @@ function App(){
         <Routes>
             <Route index element={<HomePage loadCart={loadCart} cart={cart}/>}></Route>
             <Route path="orders" element={<Orders/>}></Route>
-            <Route path="checkout" element={<Checkout cart={cart} loadCart={loadCart} />}></Route>
+            <Route path="checkout" element={<Checkout/>}></Route>
             <Route path="tracking" element={<Tracking/>}></Route>
         </Routes>
         </ContextHome>
