@@ -1,11 +1,14 @@
-import { useState , useEffect, useContext } from "react";
+import { useState , useEffect} from "react";
 import axios from "axios";
 import { formatMoney } from "../../utils/formatMoney";
 import DeliveryOptions from "./DeliveryOptions";
-import { CartContext } from "./cartContext/loadcart";
+import { useDispatch } from "react-redux";
+import { loadCart } from "../../redux/slices/cartSlice";
+
 
 function CheckoutGrid({ cartItem}) {
-  const {loadCart} = useContext(CartContext)
+  const dispatch = useDispatch();
+
   const [isEdited, setIsEdited] = useState(false);
   const [quantity, setQuantity] = useState(cartItem.quantity);
   const [deliveryOptions, setDeliveryOptions] = useState([]);
@@ -22,14 +25,14 @@ function CheckoutGrid({ cartItem}) {
 
   async function deleteCartItem() {
     await axios.delete(`/api/cart-items/${cartItem.productId}`);
-    await loadCart();
+    dispatch(loadCart());
   }
 
   async function updateCartItem() {
     await axios.put(`/api/cart-items/${cartItem.productId}`, {
       quantity,
     });
-    await loadCart();
+    dispatch(loadCart());
   }
   function updateOnChange(e) {
     setQuantity(Number(e.target.value));
