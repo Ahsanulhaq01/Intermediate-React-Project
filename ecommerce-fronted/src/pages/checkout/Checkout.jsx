@@ -1,17 +1,14 @@
 import { Link} from "react-router";
 import "./checkout.css";
 import CheckoutGrid from "./CheckoutGrid";
-import { useEffect,useContext } from "react";
+import {useContext } from "react";
 import PaymentSummary from "./PaymentSummary";
 import { CartContext } from "./cartContext/loadcart";
 
 
 
 function Checkout() {
-  const {loadCart , cart} = useContext(CartContext);
-    useEffect(()=>{
-       loadCart();
-    })
+  const { cart} = useContext(CartContext);
   return (
     <>
       <div className="checkout-page">
@@ -39,7 +36,7 @@ function Checkout() {
             {cart.map((cartItem)=>{
 
               return(
-              <CheckoutGrid cartItem={cartItem} loadCart={loadCart} key={cartItem.id} />
+              <CheckoutGrid cartItem={cartItem} key={cartItem.id} />
               )
             })}
                       

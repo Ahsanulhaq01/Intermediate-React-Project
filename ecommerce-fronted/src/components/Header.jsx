@@ -1,13 +1,10 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import "./header.css";
 import { Link } from "react-router";
 import { CartContext } from "../pages/checkout/cartContext/loadcart";
 function Header() {
   let cartQuantity = 0;
- const {loadCart , cart} = useContext(CartContext)
-   useEffect(()=>{
-    loadCart();
-   })
+ const { cart} = useContext(CartContext)
   cart?.forEach((cartItem) => {
     cartQuantity += cartItem.quantity;
   });
