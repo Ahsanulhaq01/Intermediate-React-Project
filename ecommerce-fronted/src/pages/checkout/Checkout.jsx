@@ -1,14 +1,20 @@
 import { Link} from "react-router";
 import "./checkout.css";
 import CheckoutGrid from "./CheckoutGrid";
-import {useContext } from "react";
+import {useEffect } from "react";
 import PaymentSummary from "./PaymentSummary";
-import { CartContext } from "./cartContext/loadcart";
-
+import { useDispatch, useSelector } from "react-redux";
+import { loadCart } from "../../redux/slices/cartSlice";
 
 
 function Checkout() {
-  const { cart} = useContext(CartContext);
+  const dispatch =useDispatch();
+  useEffect(()=>{
+    dispatch(loadCart())
+  } , [])
+
+  const {cart} = useSelector(state =>state.cart)
+  console.log(cart)
   return (
     <>
       <div className="checkout-page">
