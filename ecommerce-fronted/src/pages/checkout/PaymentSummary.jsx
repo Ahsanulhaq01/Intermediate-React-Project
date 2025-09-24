@@ -1,10 +1,10 @@
 import axios from "axios";
-import { useState , useEffect, useContext } from "react";
+import { useState , useEffect } from "react";
 import {formatMoney} from '../../utils/formatMoney'
-import { CartContext } from "./cartContext/loadcart";
+import { useSelector } from "react-redux";
 function PaymentSummary() {
   const [paymentSummary , setPaymentSummary] = useState({});
-  const {cart} = useContext(CartContext);
+  const {cart} = useSelector(state=>state.cart);
   async function getPaymentData(){
     const response = await axios.get('/api/payment-summary');
     setPaymentSummary(response.data);
