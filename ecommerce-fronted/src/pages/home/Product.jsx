@@ -1,12 +1,12 @@
-import { useContext, useState } from 'react'
+import { useState } from 'react'
 import { formatMoney } from '../../utils/formatMoney'
 import axios from 'axios'
-import { CartContext } from '../checkout/cartContext/loadcart';
-
+import { loadCart } from '../../redux/slices/cartSlice'
+import { useDispatch } from 'react-redux'
 function Product({product}) {
     const [quantity , setQuantity] = useState(1)
     const [checkmark , setCheckMark] = useState(false);
-    const {loadCart} = useContext(CartContext)
+    const dispatch = useDispatch();
     async function addToCart(productId , quantity){
         await axios.post('/api/cart-items',{
             productId ,
@@ -17,7 +17,7 @@ function Product({product}) {
         setCheckMark(false)
        }, 2000);
 
-      await loadCart();
+      dispatch(loadCart());
     }
     function handleSelectChange(e){
         const value = Number(e.target.value);
