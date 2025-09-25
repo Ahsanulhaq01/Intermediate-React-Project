@@ -1,18 +1,15 @@
 import Header from "../../components/Header";
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 import { Link } from "react-router";
 import "./orders.css";
-import axios from "axios";
+import { useDispatch , useSelector} from "react-redux";
+import { getOrdersData } from "../../redux/slices/orderSlice";
 
 function Orders() {
-  const [orders, setOrders] = useState([]);
-
-  async function getOrdersData() {
-    const response = await axios.get("api/orders?expand=products");
-    setOrders(response.data);
-  }
+  const dispatch = useDispatch();
+  const {orders} = useSelector(state => state.orders)
   useEffect(() => {
-    getOrdersData();
+    dispatch(getOrdersData());
   }, []);
   return (
     <>
