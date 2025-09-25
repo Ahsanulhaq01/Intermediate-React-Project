@@ -3,7 +3,6 @@ import axios from "axios";
 
 export const loadCart = createAsyncThunk('loadCart' , async()=>{
     const response = await axios.get(`/api/cart-items?expand=product`);
-    console.log(response.data)
     return response.data;
 })
 

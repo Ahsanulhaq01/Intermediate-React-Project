@@ -14,7 +14,6 @@ function Checkout() {
   } , [])
 
   const {cart} = useSelector(state =>state.cart)
-  console.log(cart)
   return (
     <>
       <div className="checkout-page">
