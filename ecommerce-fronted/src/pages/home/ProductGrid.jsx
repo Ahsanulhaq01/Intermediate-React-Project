@@ -1,7 +1,5 @@
-import { useContext, useEffect} from 'react';
-import { HomeContext } from './homeContext/HomeContext';
 import Product from './Product';
-import { CartContext } from '../checkout/cartContext/loadcart';
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getProductData } from '../../redux/slices/productSlice';
 
@@ -11,12 +9,11 @@ function ProductGrid() {
     dispatch(getProductData())
   },[])
   const {products} = useSelector(state => state.products)
-    const {loadCart} = useContext(CartContext)
   return (
     <div className="products-grid">
         {products.map((product)=>{
             return(
-            <Product product={product} key={product.id} loadCart={loadCart}/>
+            <Product product={product} key={product.id}/>
             )
         })}        
     </div>
