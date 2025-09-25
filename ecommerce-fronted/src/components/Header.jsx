@@ -1,10 +1,9 @@
-import { useContext } from "react";
 import "./header.css";
 import { Link } from "react-router";
-import { CartContext } from "../pages/checkout/cartContext/loadcart";
+import { useSelector } from "react-redux";
 function Header() {
   let cartQuantity = 0;
- const { cart} = useContext(CartContext)
+ const { cart} = useSelector(state => state.cart)
   cart?.forEach((cartItem) => {
     cartQuantity += cartItem.quantity;
   });
