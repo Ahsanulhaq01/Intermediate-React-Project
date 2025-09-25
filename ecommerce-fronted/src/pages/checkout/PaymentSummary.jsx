@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useState , useEffect } from "react";
 import {formatMoney} from '../../utils/formatMoney'
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { loadCart } from "../../redux/slices/cartSlice";
 function PaymentSummary() {
   const [paymentSummary , setPaymentSummary] = useState({});
+  const dispatch = useDispatch();
   const {cart} = useSelector(state=>state.cart);
   async function getPaymentData(){
     const response = await axios.get('/api/payment-summary');
@@ -14,7 +16,8 @@ function PaymentSummary() {
   } , [cart])
 
   async function createOrder() {
-    axios.post(`/api/orders`)
+    axios.post(`/api/orders`);
+    dispatch(loadCart());
   }
   return (
      <div className="payment-summary-container">

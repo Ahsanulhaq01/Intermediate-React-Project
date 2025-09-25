@@ -36,7 +36,7 @@ function Checkout() {
           </div>
           <div className="delivery-and-payment-container">
              
-             <PaymentSummary cart={cart}/>
+             <PaymentSummary/>
            
             {cart.map((cartItem)=>{
 
