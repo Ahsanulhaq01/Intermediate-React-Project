@@ -5,6 +5,7 @@ import "./orders.css";
 import { useDispatch , useSelector} from "react-redux";
 import { getOrdersData } from "../../redux/slices/orderSlice";
 import dayjs from "dayjs";
+import { formatMoney } from "../../utils/formatMoney";
 
 function Orders() {
   const dispatch = useDispatch();
@@ -31,7 +32,7 @@ function Orders() {
                   </div>
                   <div className="order-place-price">
                     <p className="total-cost bold">Total Cost:</p>
-                    <p className="cost-value">$130.28</p>
+                    <p className="cost-value">{formatMoney(order.totalCostCents)}</p>
                   </div>
                 </div>
                 <div className="order-id-container">
