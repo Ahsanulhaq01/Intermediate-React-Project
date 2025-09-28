@@ -4,6 +4,7 @@ import { Link } from "react-router";
 import "./orders.css";
 import { useDispatch , useSelector} from "react-redux";
 import { getOrdersData } from "../../redux/slices/orderSlice";
+import dayjs from "dayjs";
 
 function Orders() {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ function Orders() {
   useEffect(() => {
     dispatch(getOrdersData());
   }, []);
+
   return (
     <>
       <Header />
@@ -25,7 +27,7 @@ function Orders() {
                 <div className="order-place-text">
                   <div className="order-date">
                     <p className="order-place-date bold">Order Placed:</p>
-                    <p>September 13</p>
+                    <p>{dayjs(order.orderTimeMs).format('dddd , MMMM D')}</p>
                   </div>
                   <div className="order-place-price">
                     <p className="total-cost bold">Total Cost:</p>
@@ -48,7 +50,7 @@ function Orders() {
                           <p className="product-name">{prod.product.name}</p>
                           <div className="order-delivery-data">
                             <p className="delivery-text">Arriving on:</p>
-                            <p className="order-delivery-date"> September 20</p>
+                            <p className="order-delivery-date"> {dayjs(prod.estimatedDeliveryTimeMs).format('MMMM D')}</p>
                           </div>
                           <div className="add-to-cart">
                             <i className="fa-solid fa-cart-shopping"></i>
