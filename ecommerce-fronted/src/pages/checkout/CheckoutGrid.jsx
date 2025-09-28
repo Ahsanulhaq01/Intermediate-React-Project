@@ -2,14 +2,13 @@ import { useState , useEffect} from "react";
 import axios from "axios";
 import { formatMoney } from "../../utils/formatMoney";
 import DeliveryOptions from "./DeliveryOptions";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { loadCart } from "../../redux/slices/cartSlice";
-import dayjs from "dayjs";
 
 
 function CheckoutGrid({ cartItem}) {
   const dispatch = useDispatch();
-  const {cart} = useSelector(state=>state.cart);
+
   const [isEdited, setIsEdited] = useState(false);
   const [quantity, setQuantity] = useState(cartItem.quantity);
   const [deliveryOptions, setDeliveryOptions] = useState([]);
@@ -51,46 +50,13 @@ function CheckoutGrid({ cartItem}) {
       setQuantity(cartItem.quantity)
     }
   }
+
   return (
     <div className="delivery-container">
       <div className="delivery-option-and-product-details">
-        {/* {
-          deliveryOptions.length > 0 && cart.map((cartItem))=>{
-             const selectedDeliveryOption = deliveryOptions.find(
-                  (deliveryOption) => {
-                    return deliveryOption.id === cartItem.deliveryOptionId;
-                  }
-                );
-          }
-          return(
-              <div className="delivery-data">
-          <p className="delivery-header">Delivery date:{
-            selectDeliveryOption.
-            } </p>
+        <div className="delivery-data">
+          <p className="delivery-header">Delivery date:Monday, September 22</p>
         </div>
-          )
-        } */}
-        {deliveryOptions.length > 0 &&
-  cart.map((cartItem) => {
-    const selectedDeliveryOption = deliveryOptions.find(
-      (deliveryOption) => deliveryOption.id === cartItem.deliveryOptionId
-    );
-
-    return (
-      <div key={cartItem.productId} className="delivery-data">
-        <p className="delivery-header">
-          Delivery date: {dayjs(selectedDeliveryOption.estimatedDeliveryTimeMs).format('dddd ,MMMM D')}
-
-          {/* {dayjs( selectedDeliveryOption.estimatedDeliveryTimeMs).format("dddd, MMMM D")} */}
-        </p>
-      </div>
-    );
-  })}
-        {/* <div className="delivery-data">
-          <p className="delivery-header">Delivery date:{
-            
-            } </p>
-        </div> */}
         <div className="product-details-container">
           <img src={cartItem.product.image} alt="image" />
           <div className="products-details">
