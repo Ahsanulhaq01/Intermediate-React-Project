@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router";
 import axios from "axios";
 import Navbar from "../../Navabar/Navbar";
 import "./posts.css";
@@ -20,15 +21,12 @@ function Posts() {
     getData();
   }, []);
 
-  function handleSinglePost(event){
-    console.log(event.target)
-  }
   return (
     <>
       <title>All post</title>
       <Navbar />
       <div className="homepage-container">
-        <div className="allPost-sub-container" onClick={(e)=> handleSinglePost(e)}>
+        <div className="allPost-sub-container">
           {blogdata.map((blogpost) => {
             return (
               <div key={blogpost.id} className="blog-container">
@@ -40,6 +38,7 @@ function Posts() {
                 <div className="blog-body">
                   <p className="body-content truncate">{blogpost.body}</p>
                 </div>
+                <Link to={`/post/${blogpost.id}`} className="read-btn">Read More</Link>
               </div>
             );
           })}
