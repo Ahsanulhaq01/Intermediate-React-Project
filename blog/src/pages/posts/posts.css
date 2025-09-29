@@ -34,3 +34,9 @@
   width: 100%; /* set fixed width */
   display: block;
 }
+.read-btn{
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+
+}
