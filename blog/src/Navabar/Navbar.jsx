@@ -5,7 +5,7 @@ function Navbar() {
     <>
       <div className="nav-container">
         <div className="logo">
-          <img src="./menu-logo.png" alt="menu-logo" className="menu-img" />
+          <img src="../../public/menu-logo.png" alt="menu-logo" className="menu-img" />
         </div>
         <div className="nav-right-section">
           <ul className="nav-ul">
