@@ -1,4 +1,3 @@
-import Navbar from "./Navabar/Navbar";
 import Posts from "./pages/posts/Posts";
 import Post from "./pages/post/Post";
 import { Routes, Route } from "react-router";
