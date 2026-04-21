@@ -2,6 +2,10 @@
 
 A simple and interactive chatbot built using React. This project simulates a real-time chat system where users can send messages and receive automated responses using rule-based chatbot logic.
 
+# Live Demo
+
+link :-> https://chatbot-in-react-red.vercel.app/
+
 It demonstrates core frontend concepts like **React Hooks, component communication, state management, and dynamic UI rendering**.
 
 ---
@@ -81,13 +85,11 @@ useRef for DOM manipulation
 Event handling (click, keydown events)
 Dynamic rendering of lists
 Auto-scrolling chat UI
-📸 Screenshots
 
 
 ⚠️ Limitations
 Rule-based responses only (not AI-powered)
 No backend integration
-Not Responsive
 
 👨‍💻 Author
 
