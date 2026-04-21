@@ -65,12 +65,16 @@ function ChatInput({ chatMessages, setChatMessages }) {
           value={inputText}
           onKeyDown={keyhandle}
         />
-        <button className="send-button" onClick={sendMessage}>
+        <div className="clear-and-submit-btn">
+           <button className="send-button" onClick={sendMessage}>
           Send
         </button>
         <button className="clear-button" onClick={handleCLear}>
           Clear
         </button>
+
+        </div>
+       
       </div>
     </>
   );

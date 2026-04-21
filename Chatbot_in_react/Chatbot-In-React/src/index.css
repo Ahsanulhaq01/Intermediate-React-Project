@@ -38,14 +38,42 @@
             margin-bottom: 25px;
             
         }
+        @media (max-width :620px) {
+            .chat-input-container{
+                display: flex;
+                flex-direction: column;
+                gap: 8px;
+            }
+            .clear-and-submit-btn{
+                display: flex;
+                width: auto;
+                justify-content: space-evenly;
+                padding: 4px 2px;
+            }
+            .clear-and-submit-btn button{
+                width: 50%;
+                border-radius: 4px;
+            }
+        }
+        @media (max-width : 230px) {
+           .clear-and-submit-btn{
+            flex-direction: column;
+            gap: 8px;
+           }
+           .clear-and-submit-btn button{
+                width: 100%;
+                border-radius: 4px;
+            }
+        }
         
         .app-container{
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            height: 100vh;
+           height: 100vh;
             display: flex;
             flex-direction: column;
+            border: 2px solid red;
 
 
         }
