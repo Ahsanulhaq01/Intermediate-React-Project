@@ -1,12 +1,96 @@
-# React + Vite
+# 🤖 React Chatbot Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple and interactive chatbot built using React. This project simulates a real-time chat system where users can send messages and receive automated responses using rule-based chatbot logic.
 
-Currently, two official plugins are available:
+It demonstrates core frontend concepts like **React Hooks, component communication, state management, and dynamic UI rendering**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 💬 Real-time chat messaging system  
+- 🤖 Rule-based chatbot responses  
+- ⌨️ Send messages using button or Enter key  
+- 🧹 Clear chat history functionality  
+- 📜 Auto-scroll to latest messages  
+- 🕒 Timestamp for each message  
+- 🧠 Component-based architecture (ChatInput, ChatMessages, ChatMessage)  
+
+---
+
+## 🛠️ Tech Stack
+
+- **Frontend:** React (Vite)  
+- **Language:** JavaScript (ES6+)  
+- **Chat Logic:** supersimpledev Chatbot library  
+- **Date Handling:** Day.js  
+- **State Management:** React Hooks (`useState`, `useEffect`, `useRef`)  
+- **Styling:** CSS  
+
+---
+
+## 🧩 Project Structure
+
+
+ChatInput.jsx → Handles user input and message sending
+ChatMessages.jsx → Renders list of all messages
+ChatMessage.jsx → Individual message UI component
+
+
+---
+
+## 🔄 Application Flow
+
+
+User Input → ChatInput Component → Chatbot Logic → ChatMessages → UI Update
+
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/Ahsanulhaq01/Intermediate-React-Project/tree/main
+cd react-chatbot
+2. Install dependencies
+npm install
+3. Run the application
+npm run dev
+🤖 Chatbot Logic
+
+The chatbot uses simple rule-based responses defined using supersimpledev:
+
+Chatbot.addResponses(
+  {
+    "my name": "ahsanulhaq",
+  },
+  {
+    "District area from village address": "Ahsan is from Karak",
+  }
+);
+User input is matched with predefined keywords
+If a match is found, the bot returns a response
+Otherwise, default behavior is handled by the library
+🧠 Key Concepts Learned
+React functional components
+Props passing between components
+useState for state management
+useEffect for side effects
+useRef for DOM manipulation
+Event handling (click, keydown events)
+Dynamic rendering of lists
+Auto-scrolling chat UI
+📸 Screenshots
+
+
+⚠️ Limitations
+Rule-based responses only (not AI-powered)
+No backend integration
+Not Responsive
+
+👨‍💻 Author
+
+Ahsan Ul Haq
+
+MERN Stack Developer (Learning & Building Projects)
